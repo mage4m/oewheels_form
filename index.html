@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dealer Application</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="general-info-form" class="container my-5">
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="row bg p-2 mb-3">
+          <div class="col-12">
+            <h2 class="heading m-0">General Information</h2>
+          </div>
+        </div>
+        <div class="row border py-3 px-2">
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="legal-company-name"
+                >Legal Company Name <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="legal_company_name"
+                id="legal-company-name"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="dba">DBA</label>
+              <input type="text" name="dba" id="dba" class="form-control" />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="phone"
+                >Phone <span class="text-danger">*</span></label
+              >
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="fax">Fax</label>
+              <input type="text" name="fax" id="fax" class="form-control" />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="email"
+                >Email <span class="text-danger">*</span></label
+              >
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="how-sell-products"
+                >How do you sell products?
+                <span class="text-danger">*</span></label
+              >
+              <select
+                name="how_sell_products"
+                id="how-sell-products"
+                class="form-select"
+                required
+              >
+                <option value="" selected hidden>Select Option</option>
+                <option value="I sell products online only.">
+                  I sell products online only.
+                </option>
+                <option value="I sell products at my retail location(s) only.">
+                  I sell products at my retail location(s) only.
+                </option>
+                <option
+                  value="I sell products both online, and at my retail location(s)."
+                >
+                  I sell products both online, and at my retail location(s).
+                </option>
+              </select>
+            </div>
+          </div>
+          <div id="store-url" class="col-12 col-md-4 mb-3 d-none">
+            <div class="form-group">
+              <label for="store-front-url"
+                >Storefront URL <span class="text-danger">*</span>
+                <i
+                  class="bi bi-exclamation-circle-fill"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Your company's online web address"
+                ></i
+              ></label>
+              <input
+                type="text"
+                name="store_front_url"
+                id="store-front-url"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div id="billing-address-container" class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="sub-heading px-2 py-1">Billing Address</h5>
+              </div>
+              <div class="col-12 mb-3">
+                <div class="form-group">
+                  <label for="billing-street-addr">Street Address</label>
+                  <input
+                    type="text"
+                    name="billing_street_addr"
+                    id="billing-street-addr"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="billing-city">City</label>
+                  <input
+                    type="text"
+                    name="billing_city"
+                    id="billing-city"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="billing-state">State</label>
+                  <select
+                    name="billing_state"
+                    id="billing-state"
+                    class="form-select"
+                  >
+                    <option value="" selected="selected">Please select</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="PR">Puerto Rico</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="billing-zip">Zip</label>
+                  <input
+                    type="text"
+                    name="billing_zip"
+                    id="billing-zip"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-2">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="shipping-address-check"
+                id="shipping-address-check"
+                checked
+              />
+              <label class="form-check-label" for="shipping-address-check"
+                >Shipping Address Same as Billing Address</label
+              >
+            </div>
+          </div>
+          <div id="shipping-address-container" class="col-12 d-none">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="sub-heading px-2 py-1">Shipping Address</h5>
+              </div>
+              <div class="col-12 mb-3">
+                <div class="form-group">
+                  <label for="shipping-street-addr">Street Address</label>
+                  <input
+                    type="text"
+                    name="shipping_street_addr"
+                    id="shipping-street-addr"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="shipping-city">City</label>
+                  <input
+                    type="text"
+                    name="shipping_city"
+                    id="shipping-city"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="shipping-state">State</label>
+                  <select
+                    name="shipping_state"
+                    id="shipping-state"
+                    class="form-select"
+                  >
+                    <option value="" selected="selected">Please select</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                    <option value="PR">Puerto Rico</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="shipping-zip">Zip</label>
+                  <input
+                    type="text"
+                    name="shipping_zip"
+                    id="shipping-zip"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+            </div>
+            <hr />
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="business-license-number"
+                >Business License Number
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="business_license_number"
+                id="business-license-number"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="business-license-number-file"
+                >Upload Business License Number</label
+              >
+              <input
+                type="file"
+                class="form-control"
+                id="business-license-number-file"
+                name="business_license_number_file"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="sales-tax-exemption-number"
+                >Sales Tax Exemption Number
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="sales_tax_exemption_number"
+                id="sales-tax-exemption-number"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="sales-tax-exemption-number-file"
+                >Upload Sales Tax Exemption Number</label
+              >
+              <input
+                type="file"
+                class="form-control"
+                id="sales-tax-exemption-number-file"
+                name="sales_tax_exemption_number_file"
+              />
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <h5 class="sub-heading px-2 py-1">Accounts Payable Contact</h5>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="person-name"
+                >Name <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="person_name"
+                id="person-name"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="person-phone"
+                >Phone/Ext <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="person_phone"
+                id="person-phone"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="person-email"
+                >Email <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="person_email"
+                id="person-email"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <div class="form-group">
+              <label for="authorized-personnel-charge-account"
+                >Authorized Personnel to Charge Account</label
+              >
+              <input
+                type="text"
+                name="authorized_personnel_charge_account"
+                id="authorized-personnel-charge-account"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 mb-2">
+          <hr class="p-1" />
+        </div>
+        <div class="row bg p-2 mb-3">
+          <div class="col-12">
+            <h2 class="heading m-0">BUSINESS AND CREDIT INFORMATION</h2>
+          </div>
+        </div>
+        <div class="row border px-2 py-3">
+          <div class="col-12 col-md-4 mb-3">
+            <div class="from-group">
+              <label for="fein-ssn"
+                >FEIN or SSN <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="fein_ssn"
+                id="fein-ssn"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-8 mb-3">
+            <label for="radio-buttons">Business Structure</label>
+            <div
+              id="radio-buttons"
+              class="radio-buttons d-block d-md-flex gap-3 align-items-center mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="business_structure"
+                  id="sole-proprietorship"
+                  value="Sole Proprietorship"
+                  required
+                />
+                <label class="form-check-label" for="sole-proprietorship">
+                  Sole Proprietorship
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="business_structure"
+                  id="partnership"
+                  value="Partnership"
+                  required
+                />
+                <label class="form-check-label" for="partnership">
+                  Partnership
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="business_structure"
+                  id="corporation"
+                  value="Corporation"
+                  required
+                />
+                <label class="form-check-label" for="corporation">
+                  Corporation
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="business_structure"
+                  id="LLC"
+                  value="LLC"
+                  required
+                />
+                <label class="form-check-label" for="LLC"> LLC </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="business_structure"
+                  id="Other"
+                  value="Other"
+                  required
+                />
+                <label class="form-check-label" for="Other"> Other </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="checkbox-group"
+              >How do you usually make a payment?
+              <span class="text-danger">*</span></label
+            >
+            <div
+              id="checkbox-group"
+              class="checkbox-group d-block d-md-flex align-items-center gap-3 mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="terms"
+                  value="terms"
+                  id="terms"
+                />
+                <label class="form-check-label" for="terms"> Terms </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="cash"
+                  value="cash"
+                  id="cash"
+                />
+                <label class="form-check-label" for="cash"> Cash </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="company_credit_card"
+                  value="company credit card"
+                  id="company-credit-card"
+                />
+                <label class="form-check-label" for="company-credit-card">
+                  Company Credit Card
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="company_check_ach"
+                  value="company check ach"
+                  id="company-check-ach"
+                />
+                <label class="form-check-label" for="company-check-ach">
+                  Company Check (ACH)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div id="check_terms" class="col-12 d-none">
+            <p>
+              <i>Terms will be determined with overall credit application.</i>
+            </p>
+          </div>
+          <div id="check_credit_card" class="col-12 d-none mb-3">
+            <a href="#!" class="d-block"
+              >Click here to fill out the Credit Card Authorization Form.</a
+            >
+            <div class="form-group">
+              <label for="upload-company-credit-card"
+                >Please Upload a Picture of your Company Credit Card
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="file"
+                class="form-control"
+                id="upload-company-credit-card"
+                name="upload_company_credit_card"
+                required
+              />
+            </div>
+          </div>
+          <div id="check_voided" class="col-12 d-none mb-3">
+            <div class="form-group">
+              <label for="upload-voided-check"
+                >Please Upload a Picture of a Voided Check
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="file"
+                class="form-control"
+                id="upload-voided-check"
+                name="upload_voided_check"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="from-group">
+              <label for="date-business-commenced"
+                >Date Business Commenced
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="date"
+                name="date_business_commenced"
+                id="date-business-commenced"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="type-of-business"
+                >Type of Business <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="type_of_business"
+                id="type-of-business"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="date-of-incorporation"
+                >Date of Incorporation/Partnership/etc
+                <span class="text-danger">*</span></label
+              >
+              <input
+                type="date"
+                name="date_of_incorporation"
+                id="date-of-incorporation"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <div class="form-group">
+              <label for="business-state">State</label>
+              <select
+                name="business_state"
+                id="business-state"
+                class="form-select"
+                required
+              >
+                <option value="" selected="selected">Please select</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+                <option value="PR">Puerto Rico</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 mb-2">
+          <hr class="p-1" />
+        </div>
+        <div class="row bg p-2 mb-3">
+          <div class="col-12">
+            <h2 class="heading m-0">PRINCIPALS OR OFFICERS</h2>
+          </div>
+        </div>
+        <div class="row border px-2 py-3">
+          <!-- Principals -->
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-name">Name</label>
+            <input type="text" name="p_name" id="p-name" class="form-control" />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-title">Title</label>
+            <input
+              type="text"
+              name="p_title"
+              id="p-title"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-home-addr">Home Address</label>
+            <input
+              type="text"
+              name="p_home_addr"
+              id="p-home-addr"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-home-phone">Home Phone</label>
+            <input
+              type="text"
+              name="p_home_phone"
+              id="p-home-phone"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-driver-license-number">Driver's License Number</label>
+            <input
+              type="text"
+              name="p_driver_license_number"
+              id="p-driver-license-number"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-ssn">SSN</label>
+            <input type="text" name="p_ssn" id="p-ssn" class="form-control" />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="p-bankruptcy"
+              >Has a bankruptcy ever been filed in your name?</label
+            >
+            <div
+              id="p-bankruptcy"
+              class="radio-buttons d-block d-md-flex gap-3 align-items-center mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="p_bankruptcy"
+                  id="p-bankruptcy-yes"
+                  value="Yes"
+                  required
+                />
+                <label class="form-check-label" for="p-bankruptcy-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="p_bankruptcy"
+                  id="p-bankruptcy-no"
+                  value="No"
+                  required
+                />
+                <label class="form-check-label" for="p-bankruptcy-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="p-qualified"
+              >Are you qualified to do business in the state of Florida?</label
+            >
+            <div
+              id="p-qualified"
+              class="radio-buttons d-block d-md-flex gap-3 align-items-center mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="p_qualified"
+                  id="p-qualified-yes"
+                  value="Yes"
+                  required
+                />
+                <label class="form-check-label" for="p-qualified-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="p_qualified"
+                  id="p-qualified-no"
+                  value="No"
+                  required
+                />
+                <label class="form-check-label" for="p-qualified-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <!-- officer -->
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-name">Name</label>
+            <input type="text" name="o_name" id="o-name" class="form-control" />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-title">Title</label>
+            <input
+              type="text"
+              name="o_title"
+              id="o-title"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-home-addr">Home Address</label>
+            <input
+              type="text"
+              name="o_home_addr"
+              id="o-home-addr"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-home-phone">Home Phone</label>
+            <input
+              type="text"
+              name="o_home_phone"
+              id="o-home-phone"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-driver-license-number">Driver's License Number</label>
+            <input
+              type="text"
+              name="o_driver_license_number"
+              id="o-driver-license-number"
+              class="form-control"
+            />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-ssn">SSN</label>
+            <input type="text" name="o_ssn" id="o-ssn" class="form-control" />
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+            <label for="o-bankruptcy"
+              >Has a bankruptcy ever been filed in your name?</label
+            >
+            <div
+              id="o-bankruptcy"
+              class="radio-buttons d-block d-md-flex gap-3 align-items-center mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="o_bankruptcy"
+                  id="o-bankruptcy-yes"
+                  value="Yes"
+                  required
+                />
+                <label class="form-check-label" for="o-bankruptcy-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="o_bankruptcy"
+                  id="o-bankruptcy-no"
+                  value="No"
+                  required
+                />
+                <label class="form-check-label" for="o-bankruptcy-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 mb-3">
+            <label for="o-qualified"
+              >Are you qualified to do business in the state of Florida?</label
+            >
+            <div
+              id="o-qualified"
+              class="radio-buttons d-block d-md-flex gap-3 align-items-center mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="o_qualified"
+                  id="o-qualified-yes"
+                  value="Yes"
+                  required
+                />
+                <label class="form-check-label" for="o-qualified-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="o_qualified"
+                  id="o-qualified-no"
+                  value="No"
+                  required
+                />
+                <label class="form-check-label" for="o-qualified-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 mb-2">
+          <hr class="p-1" />
+        </div>
+        <div class="row bg p-2 mb-3">
+          <div class="col-12">
+            <h2 class="heading m-0">BUSINESS/TRADE REFERENCES</h2>
+          </div>
+        </div>
+        <div class="row border px-2 py-3">
+          <div class="col-12 mb-3">
+            <p class="text-secondary">
+              <span class="text-danger">*</span>BUSINESS/TRADE REFERENCES
+              REQUIRED SINCE TERMS WAS SELECTED AS A PAYMENT METHOD
+            </p>
+          </div>
+          <div class="col-12 mb-3">
+            <h5 class="sub-heading px-2 py-1">Reference 1</h5>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="company-name-1">Company Name</label>
+              <input
+                type="text"
+                name="company_name_1"
+                id="company-name-1"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="account-number-1">Account #</label>
+              <input
+                type="text"
+                name="account_number_1"
+                id="account-number-1"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="company-contact-1">Contact</label>
+              <input
+                type="text"
+                name="company_contact_1"
+                id="company-contact-1"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="company-phone-1">Phone</label>
+              <input
+                type="text"
+                name="company_phone_1"
+                id="company-phone-1"
+                class="form-control"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 px-2 py-3">
+          <button type="submit" class="ms-auto w-25 btn btn-primary btn-md">
+            Send
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        // Bootstrap Tooltip Init
+        var tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Show / Hide (Storefront URL Field)
+        $("#how-sell-products").on("change", function (e) {
+          e.preventDefault();
+          let selectedIndex = $(this).find("option:selected").index();
+          if (selectedIndex == 1 || selectedIndex == 3) {
+            $("#store-url").removeClass("d-none");
+          } else {
+            $("#store-url").addClass("d-none");
+          }
+        });
+        //   Shipping Section (Enable / Disable)
+        $("#shipping-address-check").on("change", function (e) {
+          e.preventDefault();
+          let check = $(this).is(":checked");
+          if (check === true) {
+            $("#shipping-address-container").addClass("d-none");
+          } else {
+            $("#shipping-address-container").removeClass("d-none");
+          }
+        });
+        //   Check for Terms
+        $("#checkbox-group").on("change", 'input[name="terms"]', function (e) {
+          e.preventDefault();
+          let check = $(this).is(":checked");
+          if (check === true) {
+            $("#check_terms").removeClass("d-none");
+          } else {
+            $("#check_terms").addClass("d-none");
+          }
+        });
+        //   Check for Credit Card Upload
+        $("#checkbox-group").on(
+          "change",
+          'input[name="company_credit_card"]',
+          function (e) {
+            e.preventDefault();
+            let check = $(this).is(":checked");
+            if (check === true) {
+              $("#check_credit_card").removeClass("d-none");
+            } else {
+              $("#check_credit_card").addClass("d-none");
+            }
+          }
+        );
+        //   Check for Voided Upload
+        $("#checkbox-group").on(
+          "change",
+          'input[name="company_check_ach"]',
+          function (e) {
+            e.preventDefault();
+            let check = $(this).is(":checked");
+            if (check === true) {
+              $("#check_voided").removeClass("d-none");
+            } else {
+              $("#check_voided").addClass("d-none");
+            }
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
