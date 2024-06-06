@@ -1478,6 +1478,123 @@
             />
           </div>
         </div>
+        <div class="row border px-3 py-2 mt-3">
+          <div class="col-12 my-3" id="basis-exemption">
+            <p class="font-weight-bold" for="basis-exemption">
+              Basis for exemption claim
+            </p>
+            <label for="checkboxes-resale">Resale</label>
+            <div
+              id="checkboxes-resale"
+              class="checkbox-group d-block d-md-flex align-items-center gap-3 mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="item_retail_wholesale[]"
+                  value="At Retail"
+                  id="at-retail"
+                />
+                <label class="form-check-label" for="at-retail">
+                  At Retail
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="item_retail_wholesale[]"
+                  value="At Wholesale (No Sales Tax Registration Number Required)"
+                  id="at-wholesale"
+                />
+                <label class="form-check-label" for="at-wholesale"
+                  >At Wholesale (No Sales Tax Registration Number
+                  Required)</label
+                >
+              </div>
+            </div>
+          </div>
+          <div id="sales-tax-reg" class="col-12 col-md-4 mb-3 d-none">
+            <div class="form-group">
+              <label for="sales-tax-reg-number"
+                >Sales Tax Registration Number</label
+              >
+              <input
+                type="text"
+                name="sales_tax_reg_number"
+                id="sales-tax-reg-number"
+                class="form-control"
+                placeholder="Required"
+              />
+            </div>
+          </div>
+          <label for="checkboxes-non-profit">Non-Profit Organizations</label>
+          <div
+            id="checkboxes-non-profit"
+            class="checkbox-group d-block align-items-center gap-3 mt-2"
+          >
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="non_profit_org[]"
+                value="Government Entity, Nonprofit School, Nonprofit Hospital, Church (circle type of organization)"
+                id="circle-type-org"
+              />
+              <label class="form-check-label" for="circle-type-org">
+                Government Entity, Nonprofit School, Nonprofit Hospital, Church
+                (circle type of organization)
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="non_profit_org[]"
+                value="Internal Revenue Code Section 501(c)(3) and 501(c)(4) Organizations"
+                id="internal-revenue"
+              />
+              <label class="form-check-label" for="internal-revenue"
+                >Internal Revenue Code Section 501(c)(3) and 501(c)(4)
+                Organizations</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="non_profit_org[]"
+                value="Exempt letter from State (please enclose copy)"
+                id="exempt-letter"
+              />
+              <label class="form-check-label" for="exempt-letter"
+                >Exempt letter from State (please enclose copy)</label
+              >
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="non_profit_org[]"
+                value="Other (explain)"
+                id="other-explain"
+              />
+              <label class="form-check-label" for="other-explain"
+                >Other (explain)</label
+              >
+            </div>
+          </div>
+          <div class="col-12">
+            <input
+              type="text"
+              name="other_explain"
+              id="other-explain-txt"
+              class="form-control"
+              readonly
+            />
+          </div>
+        </div>
         <div class="row mt-3 px-2 py-3">
           <button type="submit" class="ms-auto w-25 btn btn-primary btn-md">
             Send
@@ -1598,6 +1715,24 @@
             $("input[name='limited_items']").removeAttr("readonly");
           } else {
             $("input[name='limited_items']").attr("readonly", true).val("");
+          }
+        });
+        // Enable / Disable sales-tax field
+        $("#at-retail").on("change", function (e) {
+          e.preventDefault();
+          if ($(this).is(":checked")) {
+            $("#sales-tax-reg").removeClass("d-none");
+          } else {
+            $("#sales-tax-reg").addClass("d-none");
+          }
+        });
+        // Enable / Disable other_explain field
+        $("#other-explain").on("change", function (e) {
+          e.preventDefault();
+          if ($(this).is(":checked")) {
+            $("input[name='other_explain']").removeAttr("readonly");
+          } else {
+            $("input[name='other_explain']").attr("readonly", true).val("");
           }
         });
       });
