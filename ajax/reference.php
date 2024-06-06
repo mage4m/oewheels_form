@@ -51,7 +51,7 @@ $ref_id = $_POST['ref_id'];
           />
         </div>
       </div>
-      <div class="col-12 col-md-3 mb-3">
+      <div class="col-12 col-md-4 mb-3">
         <div class="form-group">
           <label for="reference-addr-<?=$ref_id?>">Address</label>
           <input
@@ -148,7 +148,7 @@ $ref_id = $_POST['ref_id'];
           />
         </div>
       </div>
-      <div class="col-12 col-md-3 mb-3">
+      <div class="col-12 col-md-2 mb-3">
         <div class="form-group">
           <label for="reference-fax-<?=$ref_id?>">Fax</label>
           <input

@@ -768,11 +768,11 @@
         </div>
         <div class="row border px-2 py-3">
           <!-- Principals -->
-          <div class="col-12 col-md-4 mb-3">
+          <div class="col-12 col-md-3 mb-3">
             <label for="p-name">Name</label>
             <input type="text" name="p_name" id="p-name" class="form-control" />
           </div>
-          <div class="col-12 col-md-4 mb-3">
+          <div class="col-12 col-md-3 mb-3">
             <label for="p-title">Title</label>
             <input
               type="text"
@@ -781,7 +781,7 @@
               class="form-control"
             />
           </div>
-          <div class="col-12 col-md-4 mb-3">
+          <div class="col-12 col-md-6 mb-3">
             <label for="p-home-addr">Home Address</label>
             <input
               type="text"
@@ -886,11 +886,11 @@
           </div>
           <hr />
           <!-- officer -->
-          <div class="col-12 col-md-4 mb-3">
+          <div class="col-12 col-md-3 mb-3">
             <label for="o-name">Name</label>
             <input type="text" name="o_name" id="o-name" class="form-control" />
           </div>
-          <div class="col-12 col-md-4 mb-3">
+          <div class="col-12 col-md-3 mb-3">
             <label for="o-title">Title</label>
             <input
               type="text"
@@ -899,7 +899,7 @@
               class="form-control"
             />
           </div>
-          <div class="col-12 col-md-4 mb-3">
+          <div class="col-12 col-md-6 mb-3">
             <label for="o-home-addr">Home Address</label>
             <input
               type="text"
@@ -1067,7 +1067,7 @@
                   />
                 </div>
               </div>
-              <div class="col-12 col-md-3 mb-3">
+              <div class="col-12 col-md-4 mb-3">
                 <div class="form-group">
                   <label for="reference-addr-1">Address</label>
                   <input
@@ -1164,7 +1164,7 @@
                   />
                 </div>
               </div>
-              <div class="col-12 col-md-3 mb-3">
+              <div class="col-12 col-md-2 mb-3">
                 <div class="form-group">
                   <label for="reference-fax-1">Fax</label>
                   <input
@@ -1234,7 +1234,7 @@
               />
             </div>
           </div>
-          <div class="col-12 col-md-3 mb-3">
+          <div class="col-12 col-md-4 mb-3">
             <div class="form-group">
               <label for="bank-ref-addr">Address</label>
               <input
@@ -1331,7 +1331,7 @@
               />
             </div>
           </div>
-          <div class="col-12 col-md-3 mb-3">
+          <div class="col-12 col-md-2 mb-3">
             <div class="form-group">
               <label for="bank-ref-fax">Fax</label>
               <input
@@ -1595,6 +1595,50 @@
               class="form-control"
               readonly
             />
+          </div>
+        </div>
+        <div class="row border px-3 py-2 mt-3">
+          <div class="col-12 my-3" id="basis-exemption">
+            <p class="counter_" for="basis-exemption">
+              In the event this claim is disallowed, the purchaser promises to
+              reimburse the seller for the amount of tax involved.
+            </p>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="purchaser"
+                >Purchaser <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                name="purchaser"
+                id="purchaser"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-9 mb-3">
+            <div class="form-group">
+              <label for="purchaser-address">Street Address</label>
+              <input
+                type="text"
+                name="purchaser_address"
+                id="purchaser-address"
+                class="form-control"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-3 mb-3">
+            <div class="form-group">
+              <label for="purchaser-phone">Phone</label>
+              <input
+                type="tel"
+                name="purchaser_phone"
+                id="purchaser-phone"
+                class="form-control"
+              />
+            </div>
           </div>
         </div>
         <div class="row mt-3 px-2 py-3">
