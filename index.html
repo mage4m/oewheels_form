@@ -1343,6 +1343,141 @@
             </div>
           </div>
         </div>
+        <div class="row mt-4 mb-2">
+          <hr class="p-1" />
+        </div>
+        <div class="row bg p-2 mb-3">
+          <div class="col-12">
+            <h2 class="heading m-0">RESALE CERTIFICATE</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-secondary">
+            <p>
+              In compliance with SALES & USE TAX LAWS, it is necessary that we
+              have the following information from all of our customers
+            </p>
+            <ol>
+              <li>
+                SIGNED Resale Certificate (see below), with State Sales Tax
+                Permit Number to show merchandise purchased for resale;
+              </li>
+              <li>
+                Copy of Sales/Use Tax or Exemption Certificate provided by
+                State.
+              </li>
+            </ol>
+          </div>
+          <div class="col-12">
+            <p class="text-center">
+              Please complete the form below, including an authorized signature
+              and address, and return with a copy of your State Resale/Exemption
+              Certificate.
+            </p>
+          </div>
+          <div class="col-12">
+            <hr class="py-1" />
+          </div>
+          <div class="col-12">
+            <p>
+              This certificate is invalid unless all four (4) sections are
+              completed by the purchaser. Your dealer application must include
+              this signed certificate or your purchases will be charged sales
+              tax
+            </p>
+          </div>
+        </div>
+        <div class="row border px-3 py-2">
+          <div class="col-12 my-3">
+            <label for="checkboxes-check-one">Check one of the following</label>
+            <div
+              id="checkboxes-check-one"
+              class="checkbox-group d-block d-md-flex align-items-center gap-3 mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="check_purchase[]"
+                  value="One-Time Purchase"
+                  id="one-time-purchase"
+                />
+                <label class="form-check-label" for="one-time-purchase">
+                  One-Time Purchase
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="check_purchase[]"
+                  value="Blanket Certificate"
+                  id="blanket-certificate"
+                />
+                <label class="form-check-label" for="blanket-certificate"
+                  >Blanket Certificate*</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <p>
+              The purchaser hereby claims exemption on the purchase of tangible
+              personal property and selected services made under this
+              certificate from Elite Wheel Warehouse and certifies that this
+              claim is based upon the purchaser's proposed use of the items or
+              services, or the status of the purchaser.
+            </p>
+          </div>
+        </div>
+        <div class="row border px-3 py-2 mt-3">
+          <div class="col-12 my-3">
+            <label for="checkboxes-certificate"
+              >Items covered by this certificate</label
+            >
+            <div
+              id="checkboxes-certificate"
+              class="checkbox-group d-block d-md-flex align-items-center gap-3 mt-2"
+            >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="items_check_purchase[]"
+                  value="All items purchased"
+                  id="all-items-purchased"
+                />
+                <label class="form-check-label" for="all-items-purchased">
+                  All items purchased
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="items_check_purchase[]"
+                  value="Limited to the following items"
+                  id="limited-to-the-following-items"
+                />
+                <label
+                  class="form-check-label"
+                  for="limited-to-the-following-items"
+                  >Limited to the following items</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <input
+              type="text"
+              name="limited_items"
+              id="limited-items"
+              class="form-control"
+              placeholder="Required"
+              readonly
+            />
+          </div>
+        </div>
         <div class="row mt-3 px-2 py-3">
           <button type="submit" class="ms-auto w-25 btn btn-primary btn-md">
             Send
@@ -1454,6 +1589,15 @@
           let newCount = +$(".reference-container").children().length;
           if (newCount < 3) {
             $(".add-ref").parent().show();
+          }
+        });
+        // Enable / Disable limited-items field
+        $("#limited-to-the-following-items").on("change", function (e) {
+          e.preventDefault();
+          if ($(this).is(":checked")) {
+            $("input[name='limited_items']").removeAttr("readonly");
+          } else {
+            $("input[name='limited_items']").attr("readonly", true).val("");
           }
         });
       });
