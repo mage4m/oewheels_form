@@ -348,7 +348,7 @@
             </div>
             <hr />
           </div>
-          <div class="col-12 col-md-3 mb-3">
+          <div class="col-12 col-md-6 mb-3">
             <div class="form-group">
               <label for="business-license-number"
                 >Business License Number
@@ -363,7 +363,7 @@
               />
             </div>
           </div>
-          <div class="col-12 col-md-3 mb-3">
+          <!-- <div class="col-12 col-md-3 mb-3">
             <div class="form-group">
               <label for="business-license-number-file"
                 >Upload Business License Number</label
@@ -375,8 +375,8 @@
                 name="business_license_number_file"
               />
             </div>
-          </div>
-          <div class="col-12 col-md-3 mb-3">
+          </div> -->
+          <div class="col-12 col-md-6 mb-3">
             <div class="form-group">
               <label for="sales-tax-exemption-number"
                 >Sales Tax Exemption Number
@@ -391,7 +391,7 @@
               />
             </div>
           </div>
-          <div class="col-12 col-md-3 mb-3">
+          <!-- <div class="col-12 col-md-3 mb-3">
             <div class="form-group">
               <label for="sales-tax-exemption-number-file"
                 >Upload Sales Tax Exemption Number</label
@@ -403,7 +403,7 @@
                 name="sales_tax_exemption_number_file"
               />
             </div>
-          </div>
+          </div> -->
           <div class="col-12 mb-3">
             <h5 class="sub-heading px-2 py-1">Accounts Payable Contact</h5>
           </div>
@@ -1348,6 +1348,38 @@
         </div>
         <div class="row bg p-2 mb-3">
           <div class="col-12">
+            <h2 class="heading m-0">DOCUMENTATION</h2>
+          </div>
+        </div>
+        <div class="row border px-3 py-2">
+          <div class="col-12 col-md-6 mt-3">
+            <h5>Upload the zip file which includes the given points below</h5>
+            <ul>
+              <li>Upload Business License Number</li>
+              <li>Upload Sales Tax Exemption Number</li>
+              <li>Please Upload a Picture of your Company Credit Card</li>
+              <li>Please Upload a Picture of a Voided Check</li>
+            </ul>
+          </div>
+          <div
+            class="col-12 col-md-6 d-flex align-items-center justify-content-center"
+          >
+            <div class="form-group w-100">
+              <label for="business-license-number-file">Upload Zip</label>
+              <input
+                type="file"
+                class="form-control"
+                id="business-license-number-file"
+                name="business_license_number_file"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 mb-2">
+          <hr class="p-1" />
+        </div>
+        <div class="row bg p-2 mb-3">
+          <div class="col-12">
             <h2 class="heading m-0">RESALE CERTIFICATE</h2>
           </div>
         </div>
@@ -2035,33 +2067,33 @@
           }
         });
         //   Check for Credit Card Upload
-        $("#checkbox-group").on(
-          "change",
-          'input[name="company_credit_card"]',
-          function (e) {
-            e.preventDefault();
-            let check = $(this).is(":checked");
-            if (check === true) {
-              $("#check_credit_card").removeClass("d-none");
-            } else {
-              $("#check_credit_card").addClass("d-none");
-            }
-          }
-        );
+        // $("#checkbox-group").on(
+        //   "change",
+        //   'input[name="company_credit_card"]',
+        //   function (e) {
+        //     e.preventDefault();
+        //     let check = $(this).is(":checked");
+        //     if (check === true) {
+        //       $("#check_credit_card").removeClass("d-none");
+        //     } else {
+        //       $("#check_credit_card").addClass("d-none");
+        //     }
+        //   }
+        // );
         //   Check for Voided Upload
-        $("#checkbox-group").on(
-          "change",
-          'input[name="company_check_ach"]',
-          function (e) {
-            e.preventDefault();
-            let check = $(this).is(":checked");
-            if (check === true) {
-              $("#check_voided").removeClass("d-none");
-            } else {
-              $("#check_voided").addClass("d-none");
-            }
-          }
-        );
+        // $("#checkbox-group").on(
+        //   "change",
+        //   'input[name="company_check_ach"]',
+        //   function (e) {
+        //     e.preventDefault();
+        //     let check = $(this).is(":checked");
+        //     if (check === true) {
+        //       $("#check_voided").removeClass("d-none");
+        //     } else {
+        //       $("#check_voided").addClass("d-none");
+        //     }
+        //   }
+        // );
         // Add Reference
         $(".add-ref").on("click", function (e) {
           e.preventDefault();
